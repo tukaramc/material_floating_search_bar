@@ -100,7 +100,8 @@ class _HomeState extends State<Home> {
       ),
     ];
 
-    final isPortrait = MediaQuery.of(context).orientation == Orientation.portrait;
+    final isPortrait =
+        MediaQuery.of(context).orientation == Orientation.portrait;
 
     return Consumer<SearchModel>(
       builder: (context, model, _) => FloatingSearchBar(
@@ -218,12 +219,13 @@ class _HomeState extends State<Home> {
                     children: [
                       Text(
                         place.name,
-                        style: textTheme.subtitle1,
+                        style: textTheme.titleMedium,
                       ),
                       const SizedBox(height: 2),
                       Text(
                         place.level2Address,
-                        style: textTheme.bodyText2?.copyWith(color: Colors.grey.shade600),
+                        style: textTheme.titleMedium
+                            ?.copyWith(color: Colors.grey.shade600),
                       ),
                     ],
                   ),
@@ -249,8 +251,8 @@ class _HomeState extends State<Home> {
       selectedItemColor: Colors.blue,
       selectedFontSize: 11.5,
       unselectedFontSize: 11.5,
-      unselectedItemColor: const Color(0xFF4d4d4d),
-      items: const [
+      unselectedItemColor: Color(0xFF4d4d4d),
+      items: [
         BottomNavigationBarItem(
           icon: Icon(MdiIcons.homeVariantOutline),
           label: 'Explore',
